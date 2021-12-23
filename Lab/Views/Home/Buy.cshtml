@@ -1,0 +1,33 @@
+﻿@model Lab.Models.Order
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Form for creating order</h3>
+
+    @using (Html.BeginForm("Buy", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <div class="form-group">
+            @Html.HiddenFor(m => m.GoodId)
+
+            @Html.LabelFor(m => m.Email, "Input your email", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(m => m.Email, new { @placeholder = "E-mail", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Count, "Input count of good which you want to buy", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(m => m.Count, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Count, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-4">
+                <p><input type="submit" value="Buy" class="btn btn-success" /></p>
+            </div>
+        </div>
+    }
+</div>

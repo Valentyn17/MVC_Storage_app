@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Lab.Models.Good>
+@{
+    ViewBag.Title = "Storage";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+
+
+    <br />
+    <div class="row">
+        <div class="pull-right" style="padding-right: 15px;">
+            <button type="submit" value="Search" class="btn btn-sm btn-primary">
+                <span class="glyphicon glyphicon-search"></span> &nbsp; Search
+            </button>
+        </div>
+        <div class="pull-right">
+            @Html.Editor("search", new { htmlattributes = new { @class = "form-control input-sm" } })
+        </div>
+    </div>
+
+    <br />
+}
+@Html.ActionLink("Create Good", "CreateGood", null, new { @class= "btn btn-success" })
+
+
+<table class="table table-striped">
+    <tr class="header">
+        <td><p>Name of good</p></td>
+        <td><p>Count in the storage(kg)</p></td>
+        <td><p>Price</p></td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><p>@item.Name</p></td>
+            <td><p>@item.Count</p></td>
+            <td><p>@item.Price</p></td>
+            <td>
+                <p>
+                    @Html.ActionLink("Edit", "EditGood", new { id = item.Id }, new { @class="btn btn-primary btn-sm" }) |
+                    @Html.ActionLink("Delete", "DeleteGood", new { id = item.Id }, new { @class = "btn btn-danger" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" }) |
+                    @Html.ActionLink("Buy", "Buy", new { id = item.Id }, new { @class = "btn btn-success btn-sm" } )
+                </p>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,59 @@
+﻿@model Lab.Models.Order
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoodName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoodId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

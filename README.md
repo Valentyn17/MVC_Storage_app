@@ -1,2 +1,2 @@
-# MVC_Storage_app
+# MVC Storage application
 Multilayered Storage MVC app on .NET Framework
